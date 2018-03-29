@@ -426,7 +426,7 @@ namespace boost
 
         for(; first != last; ++first)
         {
-            hash_combine(seed, *first);
+            hash_combine<typename std::iterator_traits<It>::value_type>(seed, *first);
         }
 
         return seed;
@@ -437,7 +437,7 @@ namespace boost
     {
         for(; first != last; ++first)
         {
-            hash_combine(seed, *first);
+            hash_combine<typename std::iterator_traits<It>::value_type>(seed, *first);
         }
     }
 
